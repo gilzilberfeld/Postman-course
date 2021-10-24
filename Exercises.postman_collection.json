@@ -1,0 +1,41 @@
+{
+	"info": {
+		"_postman_id": "4f36da85-257c-41c5-be85-0f2d95bdb738",
+		"name": "Exercises",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "01-Simple Requests",
+			"item": [
+				{
+					"name": "1 - Amazon iPhone 8 Search",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": null
+					},
+					"response": []
+				},
+				{
+					"name": "2- Posts on the server",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": null
+					},
+					"response": []
+				},
+				{
+					"name": "3- Add post",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": null
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}
