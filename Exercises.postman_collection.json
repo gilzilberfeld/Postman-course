@@ -115,6 +115,34 @@
 						}
 					},
 					"response": []
+				},
+				{
+					"name": "7- Add post with text/plain",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"title\": \"gil-test\",\r\n    \"body\": \"bar\",\r\n    \"userId\": \"{{userId}}\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "jsonplaceholder.typicode.com/posts",
+							"host": [
+								"jsonplaceholder",
+								"typicode",
+								"com"
+							],
+							"path": [
+								"posts"
+							]
+						}
+					},
+					"response": []
 				}
 			]
 		}
