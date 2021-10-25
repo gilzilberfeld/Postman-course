@@ -29,13 +29,100 @@
 				{
 					"name": "3- Add post",
 					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"title\": \"gil-test\",\r\n    \"body\": \"bar\",\r\n    \"userId\": 1\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "jsonplaceholder.typicode.com/posts",
+							"host": [
+								"jsonplaceholder",
+								"typicode",
+								"com"
+							],
+							"path": [
+								"posts"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "4- Posts for UserId #1",
+					"request": {
 						"method": "GET",
 						"header": [],
 						"url": null
 					},
 					"response": []
+				},
+				{
+					"name": "5- Posts for UserId as variable",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "jsonplaceholder.typicode.com/posts?userId={{userId}}",
+							"host": [
+								"jsonplaceholder",
+								"typicode",
+								"com"
+							],
+							"path": [
+								"posts"
+							],
+							"query": [
+								{
+									"key": "userId",
+									"value": "{{userId}}"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "6- Add post with variable",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"title\": \"gil-test\",\r\n    \"body\": \"bar\",\r\n    \"userId\": \"{{userId}}\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "jsonplaceholder.typicode.com/posts",
+							"host": [
+								"jsonplaceholder",
+								"typicode",
+								"com"
+							],
+							"path": [
+								"posts"
+							]
+						}
+					},
+					"response": []
 				}
 			]
+		}
+	],
+	"variable": [
+		{
+			"key": "userId",
+			"value": "1"
 		}
 	]
 }
