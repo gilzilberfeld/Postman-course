@@ -1,6 +1,6 @@
 {
 	"info": {
-		"_postman_id": "4f36da85-257c-41c5-be85-0f2d95bdb738",
+		"_postman_id": "14dbd7c5-a4cd-46c3-8a50-8fe2bc183a85",
 		"name": "Exercises",
 		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
 	},
@@ -189,6 +189,107 @@
 							],
 							"path": [
 								"posts"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "01- API Challenges - 1",
+			"item": [
+				{
+					"name": "Get Todos",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://apichallenges.herokuapp.com/todos",
+							"protocol": "https",
+							"host": [
+								"apichallenges",
+								"herokuapp",
+								"com"
+							],
+							"path": [
+								"todos"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Create Todo",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n            \"title\": \"My Todo\",\r\n            \"doneStatus\": false,\r\n            \"description\": \"dognabbit\"\r\n        }",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://apichallenges.herokuapp.com/todos",
+							"protocol": "https",
+							"host": [
+								"apichallenges",
+								"herokuapp",
+								"com"
+							],
+							"path": [
+								"todos"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get the created todo",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://apichallenges.herokuapp.com/todos?id=337",
+							"protocol": "https",
+							"host": [
+								"apichallenges",
+								"herokuapp",
+								"com"
+							],
+							"path": [
+								"todos"
+							],
+							"query": [
+								{
+									"key": "id",
+									"value": "337"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete the created todo Copy",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "https://apichallenges.herokuapp.com/todos/337",
+							"protocol": "https",
+							"host": [
+								"apichallenges",
+								"herokuapp",
+								"com"
+							],
+							"path": [
+								"todos",
+								"337"
 							]
 						}
 					},
