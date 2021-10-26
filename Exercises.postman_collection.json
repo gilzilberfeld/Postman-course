@@ -197,103 +197,194 @@
 			]
 		},
 		{
-			"name": "01- API Challenges - 1",
+			"name": "01- API Challenges",
 			"item": [
 				{
-					"name": "Get Todos",
-					"request": {
-						"method": "GET",
-						"header": [],
-						"url": {
-							"raw": "https://apichallenges.herokuapp.com/todos",
-							"protocol": "https",
-							"host": [
-								"apichallenges",
-								"herokuapp",
-								"com"
-							],
-							"path": [
-								"todos"
-							]
-						}
-					},
-					"response": []
-				},
-				{
-					"name": "Create Todo",
-					"request": {
-						"method": "POST",
-						"header": [],
-						"body": {
-							"mode": "raw",
-							"raw": "{\r\n            \"title\": \"My Todo\",\r\n            \"doneStatus\": false,\r\n            \"description\": \"dognabbit\"\r\n        }",
-							"options": {
-								"raw": {
-									"language": "json"
+					"name": "01",
+					"item": [
+						{
+							"name": "Get Todos",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "https://apichallenges.herokuapp.com/todos",
+									"protocol": "https",
+									"host": [
+										"apichallenges",
+										"herokuapp",
+										"com"
+									],
+									"path": [
+										"todos"
+									]
 								}
-							}
+							},
+							"response": []
 						},
-						"url": {
-							"raw": "https://apichallenges.herokuapp.com/todos",
-							"protocol": "https",
-							"host": [
-								"apichallenges",
-								"herokuapp",
-								"com"
-							],
-							"path": [
-								"todos"
-							]
-						}
-					},
-					"response": []
-				},
-				{
-					"name": "Get the created todo",
-					"request": {
-						"method": "GET",
-						"header": [],
-						"url": {
-							"raw": "https://apichallenges.herokuapp.com/todos?id=337",
-							"protocol": "https",
-							"host": [
-								"apichallenges",
-								"herokuapp",
-								"com"
-							],
-							"path": [
-								"todos"
-							],
-							"query": [
-								{
-									"key": "id",
-									"value": "337"
+						{
+							"name": "Create Todo",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n            \"title\": \"My Todo\",\r\n            \"doneStatus\": false,\r\n            \"description\": \"dognabbit\"\r\n        }",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "https://apichallenges.herokuapp.com/todos",
+									"protocol": "https",
+									"host": [
+										"apichallenges",
+										"herokuapp",
+										"com"
+									],
+									"path": [
+										"todos"
+									]
 								}
-							]
+							},
+							"response": []
+						},
+						{
+							"name": "Get the created todo",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "https://apichallenges.herokuapp.com/todos?id=337",
+									"protocol": "https",
+									"host": [
+										"apichallenges",
+										"herokuapp",
+										"com"
+									],
+									"path": [
+										"todos"
+									],
+									"query": [
+										{
+											"key": "id",
+											"value": "337"
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Delete the created todo Copy",
+							"request": {
+								"method": "DELETE",
+								"header": [],
+								"url": {
+									"raw": "https://apichallenges.herokuapp.com/todos/337",
+									"protocol": "https",
+									"host": [
+										"apichallenges",
+										"herokuapp",
+										"com"
+									],
+									"path": [
+										"todos",
+										"337"
+									]
+								}
+							},
+							"response": []
 						}
-					},
-					"response": []
+					]
 				},
 				{
-					"name": "Delete the created todo Copy",
-					"request": {
-						"method": "DELETE",
-						"header": [],
-						"url": {
-							"raw": "https://apichallenges.herokuapp.com/todos/337",
-							"protocol": "https",
-							"host": [
-								"apichallenges",
-								"herokuapp",
-								"com"
-							],
-							"path": [
-								"todos",
-								"337"
-							]
+					"name": "02",
+					"item": [
+						{
+							"name": "Create Todo with returned XML",
+							"protocolProfileBehavior": {
+								"disabledSystemHeaders": {
+									"accept": true
+								}
+							},
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/xml",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n            \"title\": \"Another Todo\",\r\n            \"doneStatus\": false,\r\n            \"description\": \"dognabbit\"\r\n        }",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "https://apichallenges.herokuapp.com/todos",
+									"protocol": "https",
+									"host": [
+										"apichallenges",
+										"herokuapp",
+										"com"
+									],
+									"path": [
+										"todos"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Update the post with XML and retun JSON",
+							"protocolProfileBehavior": {
+								"disabledSystemHeaders": {
+									"accept": true
+								}
+							},
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "<todo>\r\n    <doneStatus>true</doneStatus>\r\n    <description>dognabbit</description>\r\n    <title>Updated</title>\r\n</todo>",
+									"options": {
+										"raw": {
+											"language": "xml"
+										}
+									}
+								},
+								"url": {
+									"raw": "https://apichallenges.herokuapp.com/todos/348",
+									"protocol": "https",
+									"host": [
+										"apichallenges",
+										"herokuapp",
+										"com"
+									],
+									"path": [
+										"todos",
+										"348"
+									]
+								}
+							},
+							"response": []
 						}
-					},
-					"response": []
+					]
 				}
 			]
 		}
