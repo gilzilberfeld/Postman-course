@@ -13,7 +13,28 @@
 					"request": {
 						"method": "GET",
 						"header": [],
-						"url": null
+						"url": {
+							"raw": "https://www.amazon.com/s?&k=iphone%208",
+							"protocol": "https",
+							"host": [
+								"www",
+								"amazon",
+								"com"
+							],
+							"path": [
+								"s"
+							],
+							"query": [
+								{
+									"key": null,
+									"value": null
+								},
+								{
+									"key": "k",
+									"value": "iphone%208"
+								}
+							]
+						}
 					},
 					"response": []
 				},
@@ -22,7 +43,17 @@
 					"request": {
 						"method": "GET",
 						"header": [],
-						"url": null
+						"url": {
+							"raw": "jsonplaceholder.typicode.com/posts",
+							"host": [
+								"jsonplaceholder",
+								"typicode",
+								"com"
+							],
+							"path": [
+								"posts"
+							]
+						}
 					},
 					"response": []
 				},
@@ -59,7 +90,23 @@
 					"request": {
 						"method": "GET",
 						"header": [],
-						"url": null
+						"url": {
+							"raw": "jsonplaceholder.typicode.com/posts?userId=1",
+							"host": [
+								"jsonplaceholder",
+								"typicode",
+								"com"
+							],
+							"path": [
+								"posts"
+							],
+							"query": [
+								{
+									"key": "userId",
+									"value": "1"
+								}
+							]
+						}
 					},
 					"response": []
 				},
@@ -118,6 +165,9 @@
 				},
 				{
 					"name": "7- Add post with text/plain",
+					"protocolProfileBehavior": {
+						"disabledSystemHeaders": {}
+					},
 					"request": {
 						"method": "POST",
 						"header": [],
@@ -126,7 +176,7 @@
 							"raw": "{\r\n    \"title\": \"gil-test\",\r\n    \"body\": \"bar\",\r\n    \"userId\": \"{{userId}}\"\r\n}",
 							"options": {
 								"raw": {
-									"language": "json"
+									"language": "text"
 								}
 							}
 						},

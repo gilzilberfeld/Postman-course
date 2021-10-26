@@ -13,7 +13,15 @@
 					"request": {
 						"method": "GET",
 						"header": [],
-						"url": null
+						"url": {
+							"raw": "https://www.amazon.com",
+							"protocol": "https",
+							"host": [
+								"www",
+								"amazon",
+								"com"
+							]
+						}
 					},
 					"response": []
 				},
@@ -48,7 +56,14 @@
 					"request": {
 						"method": "GET",
 						"header": [],
-						"url": null
+						"url": {
+							"raw": "api.github.com",
+							"host": [
+								"api",
+								"github",
+								"com"
+							]
+						}
 					},
 					"response": []
 				},
@@ -106,7 +121,7 @@
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "https://jsonplaceholder.typicode.com/posts/1/comments",
+							"raw": "https://jsonplaceholder.typicode.com/posts/{{userID}}/comments",
 							"protocol": "https",
 							"host": [
 								"jsonplaceholder",
@@ -115,7 +130,7 @@
 							],
 							"path": [
 								"posts",
-								"1",
+								"{{userID}}",
 								"comments"
 							]
 						}
@@ -125,10 +140,30 @@
 			]
 		}
 	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	],
 	"variable": [
 		{
-			"key": "userID",
-			"value": "1"
+			"key": "comments-path",
+			"value": ""
 		}
 	]
 }
