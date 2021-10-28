@@ -385,6 +385,73 @@
 							"response": []
 						}
 					]
+				},
+				{
+					"name": "03",
+					"item": [
+						{
+							"name": "Update post with wrong field",
+							"protocolProfileBehavior": {
+								"disabledSystemHeaders": {
+									"accept": true
+								}
+							},
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "<todo>\r\n    <done.Status>true</done.Status>\r\n    <description>dognabbit</description>\r\n    <title>Updated</title>\r\n</todo>",
+									"options": {
+										"raw": {
+											"language": "xml"
+										}
+									}
+								},
+								"url": {
+									"raw": "https://apichallenges.herokuapp.com/todos/145",
+									"protocol": "https",
+									"host": [
+										"apichallenges",
+										"herokuapp",
+										"com"
+									],
+									"path": [
+										"todos",
+										"145"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Delete a record that doesnt exist",
+							"request": {
+								"method": "DELETE",
+								"header": [],
+								"url": {
+									"raw": "https://apichallenges.herokuapp.com/todos/3370",
+									"protocol": "https",
+									"host": [
+										"apichallenges",
+										"herokuapp",
+										"com"
+									],
+									"path": [
+										"todos",
+										"3370"
+									]
+								}
+							},
+							"response": []
+						}
+					]
 				}
 			]
 		}

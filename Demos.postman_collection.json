@@ -169,6 +169,31 @@
 					"response": []
 				}
 			]
+		},
+		{
+			"name": "02-Console",
+			"item": [
+				{
+					"name": "2-Amazon Search iPhone",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://www.amazon.com/sk=iphone86\n",
+							"protocol": "https",
+							"host": [
+								"www",
+								"amazon",
+								"com"
+							],
+							"path": [
+								"sk=iphone86\n"
+							]
+						}
+					},
+					"response": []
+				}
+			]
 		}
 	],
 	"event": [
