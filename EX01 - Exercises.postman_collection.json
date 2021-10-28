@@ -1317,6 +1317,398 @@
 							"response": []
 						}
 					]
+				},
+				{
+					"name": "07 Refactored updating posts",
+					"item": [
+						{
+							"name": "Get Todos",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{api_challenges_path}}",
+									"host": [
+										"{{api_challenges_path}}"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Update the Todo with XML",
+							"protocolProfileBehavior": {
+								"disabledSystemHeaders": {
+									"accept": true
+								}
+							},
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "<todo>\r\n    <doneStatus>true</doneStatus>\r\n    <description>{{any_description}}</description>\r\n    <title>{{any_update}}</title>\r\n</todo>",
+									"options": {
+										"raw": {
+											"language": "xml"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{api_challenges_path}}/173",
+									"host": [
+										"{{api_challenges_path}}"
+									],
+									"path": [
+										"173"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Make sure the todo is updated",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{api_challenges_path}}?id=173",
+									"host": [
+										"{{api_challenges_path}}"
+									],
+									"query": [
+										{
+											"key": "id",
+											"value": "173"
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Update the todo with XML Copy",
+							"protocolProfileBehavior": {
+								"disabledSystemHeaders": {
+									"accept": true
+								}
+							},
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "<todo>\r\n    <doneStatus>true</doneStatus>\r\n    <description>{{any_description}}</description>\r\n    <title>{{any_update}}</title>\r\n</todo>",
+									"options": {
+										"raw": {
+											"language": "xml"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{api_challenges_path}}/179",
+									"host": [
+										"{{api_challenges_path}}"
+									],
+									"path": [
+										"179"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Update another todo",
+							"protocolProfileBehavior": {
+								"disabledSystemHeaders": {
+									"accept": true
+								}
+							},
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "<todo>\r\n    <doneStatus>true</doneStatus>\r\n     <description>{{any_description}}</description>\r\n    <title>{{any_update}}</title>\r\n</todo>",
+									"options": {
+										"raw": {
+											"language": "xml"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{api_challenges_path}}/175",
+									"host": [
+										"{{api_challenges_path}}"
+									],
+									"path": [
+										"175"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Make sure the todos were  updated correctly",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{api_challenges_path}}?id=179",
+									"host": [
+										"{{api_challenges_path}}"
+									],
+									"query": [
+										{
+											"key": "id",
+											"value": "179"
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Make sure the todos were  updated correctly",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{api_challenges_path}}?id=175",
+									"host": [
+										"{{api_challenges_path}}"
+									],
+									"query": [
+										{
+											"key": "id",
+											"value": "175"
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Get All Todos",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{api_challenges_path}}",
+									"host": [
+										"{{api_challenges_path}}"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Create New Todo",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n            \"title\": \"My New Todo\",\r\n            \"doneStatus\": false,\r\n            \"description\": \"{{any_description}}\"\r\n        }",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{api_challenges_path}}",
+									"host": [
+										"{{api_challenges_path}}"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Make sure the created todo is there",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{api_challenges_path}}?id=183",
+									"host": [
+										"{{api_challenges_path}}"
+									],
+									"query": [
+										{
+											"key": "id",
+											"value": "183"
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Delete specific todo",
+							"request": {
+								"method": "DELETE",
+								"header": [],
+								"url": {
+									"raw": "{{api_challenges_path}}/183",
+									"host": [
+										"{{api_challenges_path}}"
+									],
+									"path": [
+										"183"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Make sure the deleted todo is not there",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{api_challenges_path}}?id=183",
+									"host": [
+										"{{api_challenges_path}}"
+									],
+									"query": [
+										{
+											"key": "id",
+											"value": "183"
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Try to update the deleted post",
+							"protocolProfileBehavior": {
+								"disabledSystemHeaders": {
+									"accept": true
+								}
+							},
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "<todo>\r\n    <doneStatus>true</doneStatus>\r\n    <description>{{any_description}}</description>\r\n    <title>{{any_update}}</title>\r\n</todo>",
+									"options": {
+										"raw": {
+											"language": "xml"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{api_challenges_path}}/183",
+									"host": [
+										"{{api_challenges_path}}"
+									],
+									"path": [
+										"183"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Update the first todo again with different values",
+							"protocolProfileBehavior": {
+								"disabledSystemHeaders": {
+									"accept": true
+								}
+							},
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "<todo>\r\n    <doneStatus>true</doneStatus>\r\n    <description>{{any_description}}</description>\r\n    <title>Updated again</title>\r\n</todo>",
+									"options": {
+										"raw": {
+											"language": "xml"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{api_challenges_path}}/173",
+									"host": [
+										"{{api_challenges_path}}"
+									],
+									"path": [
+										"173"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Make sure the todo is reupdated",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{api_challenges_path}}?id=171",
+									"host": [
+										"{{api_challenges_path}}"
+									],
+									"query": [
+										{
+											"key": "id",
+											"value": "171"
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Get All Todos",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{api_challenges_path}}",
+									"host": [
+										"{{api_challenges_path}}"
+									]
+								}
+							},
+							"response": []
+						}
+					]
 				}
 			]
 		}
