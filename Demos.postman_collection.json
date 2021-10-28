@@ -194,6 +194,107 @@
 					"response": []
 				}
 			]
+		},
+		{
+			"name": "03-Pre Requests and Tests",
+			"item": [
+				{
+					"name": "Logging a variable",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"console.info(\"The global product is: \" + pm.globals.get(\"Ex02-product\"));\r",
+									"console.info(\"The collection path is : \" + pm.environment.get(\"path_to_server\"));"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://www.amazon.com/s?k={{Ex02-product}}",
+							"protocol": "https",
+							"host": [
+								"www",
+								"amazon",
+								"com"
+							],
+							"path": [
+								"s"
+							],
+							"query": [
+								{
+									"key": "k",
+									"value": "{{Ex02-product}}"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Storing the response in a variable",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.collectionVariables.set(\"result\",  responseBody);\r",
+									"console.info(pm.collectionVariables.get(\"result\"));"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "api.github.com",
+							"host": [
+								"api",
+								"github",
+								"com"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Using the variable from before",
+					"event": [
+						{
+							"listen": "prerequest",
+							"script": {
+								"exec": [
+									"var response_json = JSON.parse(pm.collectionVariables.get(\"result\"));\r",
+									"var user_path = response_json.current_user_url\r",
+									"console.log(\"The current user path: \" + user_path);\r",
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "api.github.com",
+							"host": [
+								"api",
+								"github",
+								"com"
+							]
+						}
+					},
+					"response": []
+				}
+			]
 		}
 	],
 	"event": [
@@ -219,6 +320,10 @@
 	"variable": [
 		{
 			"key": "comments-path",
+			"value": ""
+		},
+		{
+			"key": "result",
 			"value": ""
 		}
 	]
