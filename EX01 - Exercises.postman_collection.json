@@ -452,6 +452,173 @@
 							"response": []
 						}
 					]
+				},
+				{
+					"name": "04 Recreate deleted post",
+					"item": [
+						{
+							"name": "Get Todos",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "https://apichallenges.herokuapp.com/todos",
+									"protocol": "https",
+									"host": [
+										"apichallenges",
+										"herokuapp",
+										"com"
+									],
+									"path": [
+										"todos"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Delete specific todo",
+							"request": {
+								"method": "DELETE",
+								"header": [],
+								"url": {
+									"raw": "https://apichallenges.herokuapp.com/todos/171",
+									"protocol": "https",
+									"host": [
+										"apichallenges",
+										"herokuapp",
+										"com"
+									],
+									"path": [
+										"todos",
+										"171"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Make sure the deleted todo is not there",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "https://apichallenges.herokuapp.com/todos?id=171",
+									"protocol": "https",
+									"host": [
+										"apichallenges",
+										"herokuapp",
+										"com"
+									],
+									"path": [
+										"todos"
+									],
+									"query": [
+										{
+											"key": "id",
+											"value": "171"
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Get All Todos",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "https://apichallenges.herokuapp.com/todos",
+									"protocol": "https",
+									"host": [
+										"apichallenges",
+										"herokuapp",
+										"com"
+									],
+									"path": [
+										"todos"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Create Todo",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n            \"title\": \"My New Todo\",\r\n            \"doneStatus\": false,\r\n            \"description\": \"dognabbit\"\r\n        }",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "https://apichallenges.herokuapp.com/todos",
+									"protocol": "https",
+									"host": [
+										"apichallenges",
+										"herokuapp",
+										"com"
+									],
+									"path": [
+										"todos"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Get the created todo",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "https://apichallenges.herokuapp.com/todos?id=172",
+									"protocol": "https",
+									"host": [
+										"apichallenges",
+										"herokuapp",
+										"com"
+									],
+									"path": [
+										"todos"
+									],
+									"query": [
+										{
+											"key": "id",
+											"value": "172"
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Get All Todos",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "https://apichallenges.herokuapp.com/todos",
+									"protocol": "https",
+									"host": [
+										"apichallenges",
+										"herokuapp",
+										"com"
+									],
+									"path": [
+										"todos"
+									]
+								}
+							},
+							"response": []
+						}
+					]
 				}
 			]
 		}
