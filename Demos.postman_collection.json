@@ -138,6 +138,37 @@
 					"response": []
 				}
 			]
+		},
+		{
+			"name": "02-Environment",
+			"item": [
+				{
+					"name": "Search with Env variable",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://www.amazon.com/s?k={{newEnvproduct}}",
+							"protocol": "https",
+							"host": [
+								"www",
+								"amazon",
+								"com"
+							],
+							"path": [
+								"s"
+							],
+							"query": [
+								{
+									"key": "k",
+									"value": "{{newEnvproduct}}"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
 		}
 	],
 	"event": [
