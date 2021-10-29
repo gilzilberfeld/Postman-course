@@ -94,7 +94,7 @@
 					"response": []
 				},
 				{
-					"name": "5- Posts Comment for UserId  1",
+					"name": "5- Posts Comment for PostId  1",
 					"request": {
 						"method": "GET",
 						"header": [],
@@ -116,12 +116,12 @@
 					"response": []
 				},
 				{
-					"name": "6- Posts Comment for UserId  as Variable",
+					"name": "6- Posts Comment for PostId  as Variable",
 					"request": {
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "https://jsonplaceholder.typicode.com/posts/{{userID}}/comments",
+							"raw": "https://jsonplaceholder.typicode.com/posts/{{post_id}}/comments",
 							"protocol": "https",
 							"host": [
 								"jsonplaceholder",
@@ -130,7 +130,7 @@
 							],
 							"path": [
 								"posts",
-								"{{userID}}",
+								"{{post_id}}",
 								"comments"
 							]
 						}
@@ -171,10 +171,10 @@
 			]
 		},
 		{
-			"name": "02-Console",
+			"name": "02-Curious cases",
 			"item": [
 				{
-					"name": "2-Amazon Search iPhone",
+					"name": "1-Amazon Search iPhone",
 					"request": {
 						"method": "GET",
 						"header": [],
@@ -188,6 +188,83 @@
 							],
 							"path": [
 								"sk=iphone86\n"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "2- With real parameter",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://www.amazon.com/s?k=iphone86\n",
+							"protocol": "https",
+							"host": [
+								"www",
+								"amazon",
+								"com"
+							],
+							"path": [
+								"s"
+							],
+							"query": [
+								{
+									"key": "k",
+									"value": "iphone86\n"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "3- Delete todo",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "https://apichallenges.herokuapp.com/todos/3370\n",
+							"protocol": "https",
+							"host": [
+								"apichallenges",
+								"herokuapp",
+								"com"
+							],
+							"path": [
+								"todos",
+								"3370\n"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update Todo",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "<todo>\r\n    <done.Status>true</done.Status>\r\n    <description>dognabbit</description>\r\n    <title>Updated</title>\r\n</todo>\r\n",
+							"options": {
+								"raw": {
+									"language": "xml"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://apichallenges.herokuapp.com/todos/3480",
+							"protocol": "https",
+							"host": [
+								"apichallenges",
+								"herokuapp",
+								"com"
+							],
+							"path": [
+								"todos",
+								"3480"
 							]
 						}
 					},
@@ -206,7 +283,8 @@
 							"script": {
 								"exec": [
 									"console.info(\"The global product is: \" + pm.globals.get(\"Ex02-product\"));\r",
-									"console.info(\"The collection path is : \" + pm.environment.get(\"path_to_server\"));"
+									"console.info(\"The collection path is : \" + pm.environment.get(\"path_to_server\"));\r",
+									""
 								],
 								"type": "text/javascript"
 							}
@@ -216,21 +294,9 @@
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "https://www.amazon.com/s?k={{Ex02-product}}",
-							"protocol": "https",
+							"raw": "{{path_to_server}}={{Ex02-product}}",
 							"host": [
-								"www",
-								"amazon",
-								"com"
-							],
-							"path": [
-								"s"
-							],
-							"query": [
-								{
-									"key": "k",
-									"value": "{{Ex02-product}}"
-								}
+								"{{path_to_server}}={{Ex02-product}}"
 							]
 						}
 					},
@@ -321,6 +387,10 @@
 		{
 			"key": "comments-path",
 			"value": ""
+		},
+		{
+			"key": "post_id",
+			"value": "1"
 		},
 		{
 			"key": "result",
